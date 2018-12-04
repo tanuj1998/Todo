@@ -103,17 +103,13 @@
 	    IndexRoute = _require.IndexRoute,
 	    hashHistory = _require.hashHistory;
 
+	var TodoApp = __webpack_require__(223);
+
 	//Load foundation
-
-
 	$(document).foundation();
 	//CSS
-	__webpack_require__(223);
-	ReactDOM.render(React.createElement(
-	  'p',
-	  null,
-	  'BoilerPlate3'
-	), document.getElementById('app'));
+	__webpack_require__(224);
+	ReactDOM.render(React.createElement(TodoApp, null), document.getElementById('app'));
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
 
 /***/ },
@@ -24898,13 +24894,35 @@
 /* 223 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	var React = __webpack_require__(8);
+
+	var TodoApp = React.createClass({
+	  displayName: 'TodoApp',
+
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      null,
+	      'TodoApp.jsx'
+	    );
+	  }
+	});
+
+	module.exports = TodoApp;
+
+/***/ },
+/* 224 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(224);
+	var content = __webpack_require__(225);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(226)(content, {});
+	var update = __webpack_require__(227)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -24921,10 +24939,10 @@
 	}
 
 /***/ },
-/* 224 */
+/* 225 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(225)();
+	exports = module.exports = __webpack_require__(226)();
 	// imports
 
 
@@ -24935,7 +24953,7 @@
 
 
 /***/ },
-/* 225 */
+/* 226 */
 /***/ function(module, exports) {
 
 	/*
@@ -24991,7 +25009,7 @@
 
 
 /***/ },
-/* 226 */
+/* 227 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
