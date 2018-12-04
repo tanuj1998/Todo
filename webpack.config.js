@@ -23,12 +23,17 @@ module.exports = {
   },
   resolve: {
     root: __dirname,
+    modulesDirectories: [
+      'node_modules',
+      './app/components'
+    ],
     alias:{
       applicationStyles: 'app/styles/app.scss',
       TodoApp: 'app/components/TodoApp.jsx',
       Todo: 'app/components/Todo.jsx',
       TodoList: 'app/components/TodoList.jsx',
-      AddTodo: 'app/components/AddTodo.jsx'
+      AddTodo: 'app/components/AddTodo.jsx',
+      Search: 'app/components/Search.jsx'
       },
     extensions: ['', '.js', '.jsx']
   },
@@ -42,6 +47,11 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/
       }
+    ]
+  },
+  sassLoader: {
+    includePaths: [
+      path.resolve(__dirname, './node_modules/foundation-sites/scss')
     ]
   }
 };
