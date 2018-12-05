@@ -24933,10 +24933,8 @@
 	      if (todo.id === id) {
 	        todo.completed = !todo.completed;
 	      }
-
 	      return todo;
 	    });
-
 	    this.setState({ todos: update });
 	  },
 	  handleSearch: function handleSearch(showCompleted, searchText) {
@@ -24946,13 +24944,17 @@
 	    });
 	  },
 	  render: function render() {
-	    var todos = this.state.todos;
+	    var _state = this.state,
+	        todos = _state.todos,
+	        showCompleted = _state.showCompleted,
+	        searchText = _state.searchText;
 
+	    var filtered = Api.filterTodos(todos, showCompleted, searchText);
 	    return React.createElement(
 	      'div',
 	      null,
 	      React.createElement(Search, { onSearch: this.handleSearch }),
-	      React.createElement(TodoList, { todos: todos, onToggle: this.handleToggle }),
+	      React.createElement(TodoList, { todos: filtered, onToggle: this.handleToggle }),
 	      React.createElement(AddTodo, { onAddTodo: this.handleAddTodo })
 	    );
 	  }
@@ -25135,6 +25137,14 @@
 	    } catch (e) {}
 
 	    return $.isArray(todos) ? todos : [];
+	  },
+	  filterTodos: function filterTodos(todos, showCompleted, searchText) {
+	    var filtered = todos;
+	    filtered = filtered.filter(function (todo) {
+	      return !todo.completed || showCompleted;
+	    });
+
+	    return filtered;
 	  }
 	};
 
