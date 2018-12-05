@@ -25144,6 +25144,10 @@
 	      return !todo.completed || showCompleted;
 	    });
 
+	    filtered = filtered.filter(function (todo) {
+	      var text = todo.text.toLowerCase();
+	      return searchText.length === 0 || text.indexOf(searchText) > -1;
+	    });
 	    return filtered;
 	  }
 	};
