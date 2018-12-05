@@ -2,6 +2,7 @@ var React = require('react');
 var TodoList = require('TodoList');
 var AddTodo = require('AddTodo');
 var Search = require('Search');
+var Api = require('Api');
 var unique = require('node-uuid');
 
 var TodoApp = React.createClass({
@@ -9,7 +10,8 @@ var TodoApp = React.createClass({
     return {
       showCompleted: false,
       searchText: '',
-      todos: [
+      todos: Api.getTodos()
+    /*  todos: [
         {
           id: unique(),
           text: 'Do math hw',
@@ -19,8 +21,12 @@ var TodoApp = React.createClass({
           text: 'Buy plane tickets',
           completed: true
         }
-      ]
+      ]*/
+
     };
+  },
+  componentDidUpdate: function () {
+    Api.setTodos(this.state.todos);
   },
   handleAddTodo: function (text) {
     //alert('new todo added: ' + text);
