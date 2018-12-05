@@ -3,16 +3,16 @@ var moment = require('moment');
 
 var Todo = React.createClass({
   render: function () {
-    var {id, text, completed, created, completedAt} = this.props;
+    var {id,text,completed,createdAt,completedAt} = this.props;
     var showDate = () => {
      var message = 'Created ';
-     var timestamp = created;
+     var stamp = createdAt;
 
      if (completed) {
        message = 'Finished ';
-       timestamp = completedAt;
+       stamp = completedAt;
      }
-     return message + moment.unix(timestamp).format('MMM Do YYYY @ h:mm a');
+     return message + moment.unix(stamp).format('MMM Do YYYY @ h:mm a');
    };
     return (
       <div onClick ={() =>{

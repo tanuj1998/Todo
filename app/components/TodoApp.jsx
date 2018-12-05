@@ -5,7 +5,7 @@ var Search = require('Search');
 var Api = require('Api');
 var unique = require('node-uuid');
 
-import moment from 'moment';
+var moment = require('moment');
 
 var TodoApp = React.createClass({
   getInitialState: function () {
@@ -27,7 +27,7 @@ var TodoApp = React.createClass({
           id: unique(),
           text: text,
           completed: false,
-          created: moment().unix(),
+          createdAt: moment().unix(),
           completedAt: undefined
         }
       ]
@@ -37,7 +37,7 @@ var TodoApp = React.createClass({
     var update = this.state.todos.map((todo) => {
       if (todo.id === id) {
         todo.completed = !todo.completed;
-        todo.completedAt = todo.completed ? moment.unix() : undefined;
+        todo.completedAt = todo.completed ? moment().unix() : undefined;
       }
       return todo;
     });
