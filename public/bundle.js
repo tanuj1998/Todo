@@ -24913,18 +24913,6 @@
 	      showCompleted: false,
 	      searchText: '',
 	      todos: Api.getTodos()
-	      /*  todos: [
-	          {
-	            id: unique(),
-	            text: 'Do math hw',
-	            completed: false
-	          }, {
-	            id: unique(),
-	            text: 'Buy plane tickets',
-	            completed: true
-	          }
-	        ]*/
-
 	    };
 	  },
 	  componentDidUpdate: function componentDidUpdate() {
