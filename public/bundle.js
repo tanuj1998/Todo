@@ -38113,12 +38113,13 @@
 /* 325 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	var React = __webpack_require__(8);
+	var moment = __webpack_require__(224);
 
 	var Todo = React.createClass({
-	  displayName: "Todo",
+	  displayName: 'Todo',
 
 	  render: function render() {
 	    var _this = this;
@@ -38126,15 +38127,36 @@
 	    var _props = this.props,
 	        id = _props.id,
 	        text = _props.text,
-	        completed = _props.completed;
+	        completed = _props.completed,
+	        created = _props.created,
+	        completedAt = _props.completedAt;
 
+	    var showDate = function showDate() {
+	      var message = 'Created ';
+	      var timestamp = created;
+
+	      if (completed) {
+	        message = 'Finished ';
+	        timestamp = completedAt;
+	      }
+	      return message + moment.unix(timestamp).format('MMM Do YYYY @ h:mm a');
+	    };
 	    return React.createElement(
-	      "div",
+	      'div',
 	      { onClick: function onClick() {
 	          _this.props.onToggle(id);
 	        } },
-	      React.createElement("input", { type: "checkbox", checked: completed }),
-	      text
+	      React.createElement('input', { type: 'checkbox', checked: completed }),
+	      React.createElement(
+	        'p',
+	        null,
+	        text
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        showDate()
+	      )
 	    );
 	  }
 	});
