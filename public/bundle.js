@@ -25095,7 +25095,7 @@
 	      React.createElement(
 	        "div",
 	        null,
-	        React.createElement("input", { type: "search", ref: "searchText", placeholder: "Search todos", onChange: this.handleSearch })
+	        React.createElement("input", { type: "search", ref: "searchText", placeholder: "Search tasks", onChange: this.handleSearch })
 	      ),
 	      React.createElement(
 	        "div",
@@ -25144,9 +25144,21 @@
 	      return !todo.completed || showCompleted;
 	    });
 
+	    // this filters when you search for a text
 	    filtered = filtered.filter(function (todo) {
 	      var text = todo.text.toLowerCase();
 	      return searchText.length === 0 || text.indexOf(searchText) > -1;
+	    });
+
+	    // sorts the tasks. It starts with the not completed tasks
+	    filtered.sort(function (x, y) {
+	      if (!x.completed && y.completed) {
+	        return -1;
+	      } else if (x.completed && !y.completed) {
+	        return 1;
+	      } else {
+	        return 0;
+	      }
 	    });
 	    return filtered;
 	  }

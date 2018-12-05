@@ -25,9 +25,23 @@ module.exports = {
       return !todo.completed || showCompleted;
     });
 
+    // this filters when you search for a text
     filtered = filtered.filter((todo) => {
       var text = todo.text.toLowerCase();
       return searchText.length === 0 || text.indexOf(searchText) > -1;
+    });
+
+    // sorts the tasks. It starts with the not completed tasks
+    filtered.sort((x, y) => {
+      if (!x.completed && y.completed) {
+        return -1;
+      }
+      else if (x.completed && !y.completed) {
+        return 1;
+      }
+      else {
+        return 0;
+      }
     });
     return filtered;
   }
