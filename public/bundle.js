@@ -24958,9 +24958,26 @@
 	    return React.createElement(
 	      'div',
 	      null,
-	      React.createElement(Search, { onSearch: this.handleSearch }),
-	      React.createElement(TodoList, { todos: filtered, onToggle: this.handleToggle }),
-	      React.createElement(AddTodo, { onAddTodo: this.handleAddTodo })
+	      React.createElement(
+	        'h1',
+	        { className: 'page-title' },
+	        'Task Completer'
+	      ),
+	      React.createElement(
+	        'div',
+	        { className: 'row' },
+	        React.createElement(
+	          'div',
+	          { className: 'column small-centered small-11 medium-6 large-5' },
+	          React.createElement(
+	            'div',
+	            { className: 'container' },
+	            React.createElement(Search, { onSearch: this.handleSearch }),
+	            React.createElement(TodoList, { todos: filtered, onToggle: this.handleToggle }),
+	            React.createElement(AddTodo, { onAddTodo: this.handleAddTodo })
+	          )
+	        )
+	      )
 	    );
 	  }
 	});
