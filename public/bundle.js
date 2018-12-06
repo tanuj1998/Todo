@@ -24957,11 +24957,15 @@
 	    var filtered = Api.filterTodos(todos, showCompleted, searchText);
 	    return React.createElement(
 	      'div',
-	      null,
+	      { className: 'start_page' },
 	      React.createElement(
 	        'h1',
 	        { className: 'page-title' },
-	        'Task Completer'
+	        React.createElement(
+	          'strong',
+	          null,
+	          'Todo App'
+	        )
 	      ),
 	      React.createElement(
 	        'div',
@@ -38208,8 +38212,8 @@
 	        React.createElement('input', { type: 'text', ref: 'todoText', placeholder: 'Add something' }),
 	        React.createElement(
 	          'button',
-	          { className: 'button expanded hollow' },
-	          'Add Todo'
+	          { className: 'button expanded' },
+	          'Add Task'
 	        )
 	      )
 	    );
@@ -43019,7 +43023,7 @@
 
 
 	// module
-	exports.push([module.id, "", ""]);
+	exports.push([module.id, ".page-title {\n  color: #33B3FF;\n  margin-top: 2.5rem;\n  margin-bottom: 2.5rem; }\n\n.start_page {\n  background: url(http://unsplash.it/1500/1000?image=885&blur=50);\n  background-size: cover;\n  height: 190vh; }\n", ""]);
 
 	// exports
 
