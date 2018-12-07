@@ -37,7 +37,8 @@ module.exports = {
       Api: 'app/components/Api.jsx',
 
       actions: 'app/actions/actions.jsx',
-      reducers: 'app/reducers/reducers.jsx'
+      reducers: 'app/reducers/reducers.jsx',
+      store_config: 'app/store/store_config.jsx'
       },
     extensions: ['', '.js', '.jsx']
   },
