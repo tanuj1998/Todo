@@ -10,16 +10,17 @@ var store = require('store_config').configure();
 var TodoApp = require('TodoApp');
 var Api = require('Api');
 
-
+/*
 store.subscribe(() => {
   var state = store.getState();
   console.log('New state', store.getState());
   Api.setTodos(state.todos);
-});
+});*/
 
-var initialTodos = Api.getTodos();
-store.dispatch(actions.addTodos(initialTodos));
+//var initialTodos = Api.getTodos();
+//store.dispatch(actions.addTodos(initialTodos));
 
+store.dispatch(actions.startAddTodos());
 require('style!css!foundation-sites/dist/foundation.min.css');
 $(document).foundation();
 

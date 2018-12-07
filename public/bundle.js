@@ -113,15 +113,17 @@
 	var TodoApp = __webpack_require__(387);
 	var Api = __webpack_require__(390);
 
-	store.subscribe(function () {
+	/*
+	store.subscribe(() => {
 	  var state = store.getState();
 	  console.log('New state', store.getState());
 	  Api.setTodos(state.todos);
-	});
+	});*/
 
-	var initialTodos = Api.getTodos();
-	store.dispatch(actions.addTodos(initialTodos));
+	//var initialTodos = Api.getTodos();
+	//store.dispatch(actions.addTodos(initialTodos));
 
+	store.dispatch(actions.startAddTodos());
 	__webpack_require__(393);
 	$(document).foundation();
 
@@ -26637,7 +26639,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.startToggleTodo = exports.addTodos = exports.updateTodo = exports.startAddTodo = exports.addTodo = exports.toggleShowCompleted = exports.setSearchText = undefined;
+	exports.startToggleTodo = exports.startAddTodos = exports.addTodos = exports.updateTodo = exports.startAddTodo = exports.addTodo = exports.toggleShowCompleted = exports.setSearchText = undefined;
 
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -26700,6 +26702,25 @@
 	  return {
 	    type: 'ADD_TODOS',
 	    todos: todos
+	  };
+	};
+
+	var startAddTodos = exports.startAddTodos = function startAddTodos() {
+	  return function (dispatch, getState) {
+	    var todosRef = _index.ref.child('todos');
+
+	    return todosRef.once('value').then(function (snapshot) {
+	      var todos = snapshot.val() || {};
+	      var parsedTodos = [];
+
+	      Object.keys(todos).forEach(function (todoId) {
+	        parsedTodos.push(_extends({
+	          id: todoId
+	        }, todos[todoId]));
+	      });
+
+	      dispatch(addTodos(parsedTodos));
+	    });
 	  };
 	};
 
@@ -45068,14 +45089,15 @@
 	        searchText = _props.searchText;
 
 	    var renderTodos = function renderTodos() {
-	      if (todos.length === 0) {
+	      var filteredTodos = Api.filterTodos(todos, showCompleted, searchText);
+	      if (filteredTodos.length === 0) {
 	        return React.createElement(
 	          'p',
 	          { className: 'container__message' },
 	          'No Results'
 	        );
 	      }
-	      return Api.filterTodos(todos, showCompleted, searchText).map(function (todo) {
+	      return filteredTodos.map(function (todo) {
 	        return React.createElement(Todo, _extends({ key: todo.id }, todo));
 	      });
 	    };
@@ -45168,22 +45190,21 @@
 	var $ = __webpack_require__(7);
 
 	module.exports = {
-	  setTodos: function setTodos(todos) {
+	  /*setTodos: function (todos) {
 	    if ($.isArray(todos)) {
 	      localStorage.setItem('todos', JSON.stringify(todos));
 	      return todos;
 	    }
 	  },
-	  getTodos: function getTodos() {
+	  getTodos: function () {
 	    var stringTodos = localStorage.getItem('todos');
 	    var todos = [];
-
-	    try {
+	     try {
 	      todos = JSON.parse(stringTodos);
-	    } catch (e) {}
-
-	    return $.isArray(todos) ? todos : [];
-	  },
+	    } catch (e) {
+	     }
+	     return $.isArray(todos) ? todos : [];
+	  },*/
 	  filterTodos: function filterTodos(todos, showCompleted, searchText) {
 	    var filtered = todos;
 	    filtered = filtered.filter(function (todo) {
