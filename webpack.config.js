@@ -34,7 +34,10 @@ module.exports = {
       TodoList: 'app/components/TodoList.jsx',
       AddTodo: 'app/components/AddTodo.jsx',
       Search: 'app/components/Search.jsx',
-      Api: 'app/components/Api.jsx'
+      Api: 'app/components/Api.jsx',
+
+      actions: 'app/actions/actions.jsx',
+      reducers: 'app/reducers/reducers.jsx'
       },
     extensions: ['', '.js', '.jsx']
   },
