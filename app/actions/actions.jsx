@@ -24,3 +24,9 @@ export var toggleTodo = (id) => {
     id
   };
 };
+export var addTodos = (todos) => {
+  return {
+    type: 'ADD_TODOS',
+    todos
+  };
+};
