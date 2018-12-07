@@ -18,10 +18,12 @@ export var TodoApp = React.createClass({
 
     return (
       <div className="start_page">
-        <div className="top-bar">
+        <div>
         <h1 className="page-title">Todo App</h1>
           <div className="page-actions">
+            <div className="callout callout-auth">
             <a href="#" onClick={this.onLogout}>Logout</a>
+            </div>
           </div>
         <div className="row">
           <div className="column small-centered small-11 medium-6 large-5">
