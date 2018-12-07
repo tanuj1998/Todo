@@ -1,6 +1,6 @@
 var express = require('express');
-const server = require('server');
-server(ctx => 'Application is running');
+//const server = require('server');
+//server(ctx => 'Application is running');
 
 // Create app
 var app = express();
