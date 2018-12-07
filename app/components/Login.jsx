@@ -9,7 +9,7 @@ export var Login = React.createClass({
   },
   render() {
     return (
-      <div className="start_page">
+      <div className="start_page1">
         <h1 className="page-title">Todo App</h1>
         <div className="row">
           <div className="columns small-centered small-10 medium-6 large-4">

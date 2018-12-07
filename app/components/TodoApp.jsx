@@ -17,7 +17,7 @@ export var TodoApp = React.createClass({
   render: function () {
 
     return (
-      <div className="start_page">
+      <div className="start_page2">
         <div>
         <h1 className="page-title">Todo App</h1>
           <div className="page-actions">

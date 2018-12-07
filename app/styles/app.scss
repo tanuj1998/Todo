@@ -6,10 +6,18 @@
   margin-bottom: 2.5rem;
 }
 
-.start_page{
+.start_page1{
    background: url(http://unsplash.it/1500/1000?image=885&blur=50);
    background-size: cover;
    height: 100vh;
+   background-position: center;
+}
+.start_page2{
+   background: url(http://unsplash.it/1500/1000?image=885&blur=50);
+   height: 100%;
+   background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
 }
 .container {
   background: #eeeeee;
