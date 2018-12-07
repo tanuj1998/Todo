@@ -2,7 +2,7 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var {Route, Router, IndexRoute, hashHistory} = require('react-router');
 
-import './../database/firebase/index';
+//import './../database/firebase/index';
 
 var {Provider} = require('react-redux');
 var actions = require('actions');

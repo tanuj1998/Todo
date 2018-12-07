@@ -35,6 +35,7 @@ module.exports = {
       AddTodo: 'app/components/AddTodo.jsx',
       Search: 'app/components/Search.jsx',
       Api: 'app/components/Api.jsx',
+      app: 'app',
 
       actions: 'app/actions/actions.jsx',
       reducers: 'app/reducers/reducers.jsx',
