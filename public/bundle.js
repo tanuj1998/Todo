@@ -104,7 +104,7 @@
 	    hashHistory = _require.hashHistory;
 
 	var TodoApp = __webpack_require__(223);
-	//import 'firebase/index';
+
 	__webpack_require__(352);
 	$(document).foundation();
 
@@ -38221,7 +38221,7 @@
 	  render: function render() {
 	    return React.createElement(
 	      'div',
-	      { className: 'container__footer' },
+	      { className: 'container_footer' },
 	      React.createElement(
 	        'form',
 	        { onSubmit: this.handleSubmit },
@@ -43039,7 +43039,7 @@
 
 
 	// module
-	exports.push([module.id, ".page-title {\n  color: #33B3FF;\n  margin-top: 2.5rem;\n  margin-bottom: 2.5rem; }\n\n.start_page {\n  background: url(http://unsplash.it/1500/1000?image=885&blur=50);\n  background-size: cover;\n  height: 190vh; }\n\n.container {\n  background: #eeeeee;\n  border: 1px solid #aaa;\n  border-radius: 5px;\n  padding: 0;\n  margin-bottom: 2rem; }\n\n.container__header {\n  border-bottom: 1px solid #eeeeee;\n  padding: 1rem; }\n  .container__header label {\n    cursor: pointer;\n    font-size: 1rem; }\n  .container__header > :last-child {\n    align-items: center;\n    display: flex; }\n\n.container__message {\n  color: #aaa;\n  margin: 2rem auto;\n  text-align: center; }\n\n.container__footer {\n  border-top: 1px solid #eeeeee;\n  padding: 2rem 2rem 0 2rem; }\n\n.menu a {\n  color: #eeeeee; }\n\n.todo {\n  align-items: center;\n  cursor: pointer;\n  display: flex;\n  padding: 1rem;\n  transition: background .3s ease; }\n  .todo p, .todo input {\n    margin: 0; }\n  .todo > :first-child {\n    margin-right: 1rem; }\n  .todo:hover {\n    background: #ACBFD8; }\n\n.todo__subtext {\n  color: #999; }\n\n.todo-completed p, .todo-completed .todo-subtext {\n  color: #aaa;\n  text-decoration: line-through; }\n", ""]);
+	exports.push([module.id, ".page-title {\n  color: #33B3FF;\n  margin-top: 2.5rem;\n  margin-bottom: 2.5rem; }\n\n.start_page {\n  background: url(http://unsplash.it/1500/1000?image=885&blur=50);\n  background-size: cover;\n  height: 190vh; }\n\n.container {\n  background: #eeeeee;\n  border: 1px solid #aaa;\n  border-radius: 5px;\n  padding: 0;\n  margin-bottom: 2rem; }\n\n.container__header {\n  border-bottom: 1px solid #eeeeee;\n  padding: 1rem; }\n  .container__header label {\n    cursor: pointer;\n    font-size: 1rem; }\n  .container__header > :last-child {\n    align-items: center;\n    display: flex; }\n\n.container__message {\n  color: #aaa;\n  margin: 2rem auto;\n  text-align: center; }\n\n.container__footer {\n  border-top: 1px solid #eeeeee;\n  padding: 1rem 1rem 0 1rem; }\n\n.menu a {\n  color: #eeeeee; }\n\n.todo {\n  align-items: center;\n  cursor: pointer;\n  display: flex;\n  padding: 1rem;\n  transition: background .3s ease; }\n  .todo p, .todo input {\n    margin: 0; }\n  .todo > :first-child {\n    margin-right: 1rem; }\n  .todo:hover {\n    background: #ACBFD8; }\n\n.todo__subtext {\n  color: #999; }\n\n.todo-completed p, .todo-completed .todo-subtext {\n  color: #aaa;\n  text-decoration: line-through; }\n", ""]);
 
 	// exports
 
