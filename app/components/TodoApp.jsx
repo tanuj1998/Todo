@@ -18,7 +18,7 @@ export var TodoApp = React.createClass({
 
     return (
       <div className="start_page">
-
+        <div className="top-bar">
         <h1 className="page-title">Todo App</h1>
           <div className="page-actions">
             <a href="#" onClick={this.onLogout}>Logout</a>
@@ -31,6 +31,7 @@ export var TodoApp = React.createClass({
               <AddTodo/>
             </div>
           </div>
+        </div>
         </div>
       </div>
     )
