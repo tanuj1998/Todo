@@ -15,7 +15,6 @@ export var Login = React.createClass({
           <div className="columns small-centered small-10 medium-6 large-4">
             <div className="callout callout-auth">
               <h3>Login</h3>
-              
               <p>
                 Login with GitHub account below.
               </p>
